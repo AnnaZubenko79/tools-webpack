@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 КОНСПЕКТ
 
 ## Table of Contents
@@ -108,3 +109,20 @@
     // bad
     const items = new Array();
     ``` -->
+=======
+# tools-webpack
+
+Конспект
+ 
+  ```javascript
+  import fetchUser from './profile/gateway.js';
+  import { printProfile } from './profile/index.js';
+
+  fetchUser('github').then((userData) =>
+  printProfile({
+  name: userData.name,
+  company: userData.location,})
+  );
+  ```
+
+>>>>>>> 418429e2a408591529037b7e9f4a1668e5d3381c
