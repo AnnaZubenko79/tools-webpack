@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-КОНСПЕКТ
+# КОНСПЕКТ
 
 ## Table of Contents
 
@@ -8,7 +7,58 @@
 
 ## WEBPACK
 
+WEBPACK - необходим для того чтобы большое количество файлов наших или из сторонних библиотек собрать в кучу и чтобы это все работало
+
 ![Webpack+ES Modules](/img/webpack_esmodules.png)
+
+Принцип работы Webpack - берет сторонние файлы и переделывает их
+![Principes Webpack](/img/principes_wp.png)
+
+![Oppotunity Webpack](/img/oppotunity.png)
+
+##Установка
+
+npm i -D webpack
+
+если нужна версия, то npm i -D webpack@4
+
+Чтобы при работе с Webpack не появлялось предепреждение о том что он по умолчанию работает в режиме продакшн, необходимо указать --mode=production. В таком режиме возвращается минифицированный файл
+
+```javascript
+ "scripts": {
+    "build": "webpack --mode=production"
+  },
+```
+
+Код ниже вернет расширенный файл
+
+```javascript
+ "scripts": {
+    "build": "webpack --mode=development"
+  },
+```
+
+![Zero config](/img/zero-config.png)
+WP необходимо указать точку входа в приложение. Если не указывать входящий файл, то по умолчанию WP будет искать в папке src index.js, если не найдет, то выдаст ошибку.
+Если же мы хотим назвать по другому наш файл, то обязательно нужно указать в package.json точку входа
+
+```javascript
+ "scripts": {
+    "build": "webpack ./src/my-index.js --mode=development"
+  },
+```
+
+С файлом, котрый по умолчанию возвращает вебпак работать невозможно, так как он генерирует свои переменные и т.д. Чтобы мы могли увидеть свой код в инструментах разработчика нужно добавить --devtool eval-source-maps. И по итогу мы генерируем
+
+- для разработки - "watch": "webpack ./src/my-index.js --mode=development --devtool eval-source-maps -w" (флаг -w, отслеживает и собирает наш код в реальном времени),
+- для продакшн - "build": "webpack ./src/my-index.js --mode=production"
+
+```javascript
+"scripts": {
+   "build": "webpack ./src/my-index.js --mode=production",
+   "watch": "webpack ./src/my-index.js --mode=development --devtool eval-source-maps -w"
+ },
+```
 
 <!-- <a name="types--primitives"></a><a name="1.1"></a>
   - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
@@ -109,20 +159,3 @@
     // bad
     const items = new Array();
     ``` -->
-=======
-# tools-webpack
-
-Конспект
- 
-  ```javascript
-  import fetchUser from './profile/gateway.js';
-  import { printProfile } from './profile/index.js';
-
-  fetchUser('github').then((userData) =>
-  printProfile({
-  name: userData.name,
-  company: userData.location,})
-  );
-  ```
-
->>>>>>> 418429e2a408591529037b7e9f4a1668e5d3381c
