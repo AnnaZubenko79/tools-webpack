@@ -1,6 +1,6 @@
-import { renderTasks } from './renderer.js';
-import { getItem, setItem } from './storage.js';
-import { getTasksList, updateTask, deleteTask } from './tasksGateway.js';
+import { renderTasks } from './renderer';
+import { getItem, setItem } from './storage';
+import { getTasksList, updateTask, deleteTask } from './tasksGateway';
 
 export const onToggleTask = (event) => {
   const isCheckbox = event.target.classList.contains('list-item__checkbox');
@@ -21,7 +21,7 @@ export const onToggleTask = (event) => {
   }
 
   const taskId = event.target.dataset.id;
-  console.log(taskId);
+
   const tasksList = getItem('tasksList');
   const { text, createDate } = tasksList.find((task) => task.id === taskId);
   const done = event.target.checked;

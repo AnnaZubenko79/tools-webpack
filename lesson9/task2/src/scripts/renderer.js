@@ -1,4 +1,4 @@
-import { getItem } from './storage.js';
+import { getItem } from './storage';
 
 const listElem = document.querySelector('.list');
 const compareTasks = (a, b) => {
@@ -16,7 +16,6 @@ export const createCheckbox = ({ done, id }) => {
   checkboxElem.setAttribute('data-id', id);
   checkboxElem.checked = done;
   checkboxElem.classList.add('list-item__checkbox');
-  console.log(checkboxElem);
   return checkboxElem;
 };
 const createListItem = ({ text, done, id }) => {
