@@ -102,6 +102,8 @@ module.exports = {
 
 Для чего нужны лоадеры? Лоадеры существуют для того чтобы объяснить вебпаку, что делать с тем или иным файлом, так как по умолчанию вебпак работает с файлами js, а лоадеры объясняют вебпаку, что делать с файлами другого типа
 
+## Webpack - Plugins
+
 <!-- <a name="types--primitives"></a><a name="1.1"></a>
   - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
 
